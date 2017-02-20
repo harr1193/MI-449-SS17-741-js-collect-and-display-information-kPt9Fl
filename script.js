@@ -13,26 +13,18 @@ var updateProfile = function () {
   var phoneNumber = phoneNumberInput.value
   var preview = document.getElementById('preview')
   var rawHTML = document.getElementById('html-preview')
+  var text =
+    '<h1>Hi my name is ' + fullName + '!</h1>' +
+    '<p>' + description + '</p>' +
+    '<p>' +
+    '  If you\'re interested in a date, you can email me at' +
+    '  <a href="mailto:' + email + '" target="_blank">' + email + '</a>' +
+    '  or give me a call at' +
+    '  <a href="tel:' + phoneNumber + '" target="_blank">' + phoneNumber + '</a>.' +
+    '</p>'
+  preview.innerHTML = text
 
-  preview.innerHTML =
-  '<h1>Hi my name is ' + fullName + '!</h1>' +
-  '<p>' + description + '</p>' +
-  '<p>' +
-  '  If you\'re interested in a date, you can email me at' +
-  '  <a href="mailto:EMAIL_ADDRESS" target="_blank">' + email + '</a>' +
-  '  or give me a call at' +
-  '  <a href="tel:PHONE_NUMBER" target="_blank">' + phoneNumber + '</a>.' +
-  '</p>'
-
-  rawHTML.textContent =
-  '<h1>Hi my name is ' + fullName + '!</h1>' +
-  '<p>' + description + '</p>' +
-  '<p>' +
-  '  If you\'re interested in a date, you can email me at' +
-  '  <a href="mailto:EMAIL_ADDRESS" target="_blank">' + email + '</a>' +
-  '  or give me a call at' +
-  '  <a href="tel:PHONE_NUMBER" target="_blank">' + phoneNumber + '</a>.' +
-  '</p>'
+  rawHTML.textContent = text
 }
 
 firstNameInput.addEventListener('input', updateProfile)
